@@ -1,0 +1,13 @@
+# Display Beep
+print( "please enter a character to display beeps eyes")
+eye = input()
+print("  ###########")
+print(" # ######### #")
+print(f"#  # {eye}   {eye}  # #")
+print(" # ######### #")
+print("  ###########")
+print("       ##    ")
+print("      #  #   ")
+print("     #    #  ")
+print("      #  #   ")
+print("       ##    ")

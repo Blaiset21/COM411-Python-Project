@@ -1,0 +1,11 @@
+# Display Beep
+print("  ###########")
+print(" # ######### #")
+print("#  # |   |  # #")
+print(" # ######### #")
+print("  ###########")
+print("       ##    ")
+print("      #  #   ")
+print("     #    #  ")
+print("      #  #   ")
+print("       ##    ")

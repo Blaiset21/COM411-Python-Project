@@ -1,4 +1,4 @@
-print("Please enter a user_word:")
+print("Please enter a word:")
 phrase = input()
 bop = len(f"{phrase}")
 count = 0

@@ -10,6 +10,7 @@ def medium_pattern():
 
 def long_pattern():
     pattern = {"sequence": "1100110011001100", "occurrences": 50}
+    return pattern
 
 
 def run():

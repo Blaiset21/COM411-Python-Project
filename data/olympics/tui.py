@@ -22,7 +22,7 @@ def menu():
     {"[team]":<10}   Tally up medals for each team
     {"[exit]":<10}     Exit the program""")
     selection = input("Your selection:")
-    return selection
+    return selection.strip().lower()
 
 
 def display_medal_tally(tally):

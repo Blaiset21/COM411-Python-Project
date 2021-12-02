@@ -1,7 +1,3 @@
-import csv
-
-records = []
-headings = []
 
 
 def started(msg=""):

@@ -1,26 +1,29 @@
+
 class Planet:
 
-    def __init__(self, human=[], robot=[]):
-        self.human = human
-        self.robot = robot
+    def __init__(self):
+        self.inhabitants = {
+            'humans': [],
+            'robots': []
+        }
 
     def __repr__(self):
-        return f"planet(humans={self.human}, robots={self.robot})"
+        return f"planet(humans={self.inhabitants['humans']}, robots={self.inhabitants['robots']})"
 
     def __str__(self):
-        return f"This planet has {len(self.human)} humans and {len(self.robot)} robots."
+        return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots."
 
     def add_human(self):
-        self.human.append("human")
+        self.inhabitants['humans'].append("human")
 
     def add_robot(self):
-        self.robot.append("robot")
+        self.inhabitants['robots'].append("robot")
 
     def remove_human(self):
-        self.human.append("human")
+        self.inhabitants['humans'].append("human")
 
     def remove_robot(self):
-        self.robot.append("robot")
+        self.inhabitants['robots'].append("robot")
 
 
 if __name__ == "__main__":

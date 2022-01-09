@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def display(x,y):
+def display(x, y):
 
     plt.plot(x, y)
     plt.show()
@@ -9,7 +9,7 @@ def display(x,y):
 
 def run():
     x = [1, 2, 3, 4, 5]
-    y = [1, 4, 9, 16, 25 ]
-    display(x,y)
+    y = [1, 4, 9, 16, 25]
+    display(x, y)
 
 run()

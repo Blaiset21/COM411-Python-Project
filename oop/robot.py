@@ -44,7 +44,7 @@ class Robot:
             return 0
 
 
-if (__name__ == "__main__"):
+if __name__ == "__main__":
     robot = Robot()
     Robot.the_laws()
     print(repr(robot))

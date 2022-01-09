@@ -22,6 +22,20 @@ class Robot:
     def __str__(self):
         return f'Robot {self.name} is {self.age} years old.'
 
+    def grow(self):
+        self.age += 1
+
+    def eat(self):
+        if self.energy >= 90:
+            pass
+        else:
+            self.energy += 10
+
+    def move(self):
+        if self.energy <= 10:
+            pass
+        else:
+            self.energy -= 10
 
 if __name__ == "__main__":
     robot = Robot()

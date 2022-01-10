@@ -29,6 +29,5 @@ class Planet:
 
 if __name__ == "__main__":
     planet = Planet()
-    planet.add_human()
     print(planet)
     print(repr(planet))

@@ -1,20 +1,15 @@
-class Robot:
-    laws = "Protect, Obey and Survive"
-    MAX_ENERGY = 100
+from inhabitant import Inhabitant
 
+
+class Robot(Inhabitant):
+    laws = "Protect, Obey and Survive"
+
+    @staticmethod
     def the_laws():
         print(Robot.laws)
 
-    def assemble(cls):
-        return cls("Assembled Robot")
-
-    def __init__(self, name="Robot"):
-        self.name = name
-        self.age = 0
-        self.energy = 0
-
-    def display(self):
-        print(f"I am {self.name}")
+    def __init__(self, name="Robot", age=0):
+        super().__init__(name, age)
 
     def __repr__(self):
         return f'robot(name={self.name}, age={self.age}, energy={self.energy})'
@@ -22,29 +17,11 @@ class Robot:
     def __str__(self):
         return f'My name is {self.name} and I am {self.age} years old and my energy is {self.energy}.'
 
-    def eat(self, amount):
-        potential_energy = self.energy + amount
-        if potential_energy > Robot.MAX_ENERGY:
-            self.energy = Robot.MAX_ENERGY
-            return potential_energy - self.energy
-        else:
-            self.energy = potential_energy
-            return 0
-
-    def grow(self):
-        self.age += 1
-
-    def move(self, distance):
-        potential_energy = self.energy - distance
-        if potential_energy < 0:
-            self.energy = 0
-            return self.energy - abs(potential_energy)
-        else:
-            self.energy = potential_energy
-            return 0
+    def display(self):
+        print(f"I am {self.name}")
 
 
-if __name__ == "__main__":
+if (__name__ == "__main__"):
     robot = Robot()
     Robot.the_laws()
     print(repr(robot))

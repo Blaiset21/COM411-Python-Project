@@ -3,31 +3,27 @@ from robot import Robot
 class Planet:
 
     def __init__(self):
-        self.inhabitants = {
-            'humans': [],
-            'robots': []
-        }
+        self.inhabitants = []
 
     def __repr__(self):
-        return f"planet(humans={self.inhabitants['humans']}, robots={self.inhabitants['robots']})"
+        return f"planet(inhabitants={self.inhabitants})"
 
     def __str__(self):
-        return f"This planet has {len(self.inhabitants['humans'])} humans and {len(self.inhabitants['robots'])} robots."
+        return f"This planet has {len(self.inhabitants)} inhabitants"
 
-    def add_human(self, human):
-        self.inhabitants['humans'].append(human)
+    def add(self, inhabitant):
+        self.inhabitants.append(inhabitant)
 
-    def add_robot(self, robot):
-        self.inhabitants['robots'].append(robot)
-
-    def remove_human(self, human):
-        self.inhabitants['humans'].append(human)
-
-    def remove_robot(self, robot):
-        self.inhabitants['robots'].append(robot)
+    def remove(self, inhabitant):
+        self.inhabitantsappend(inhabitant)
 
 
 if __name__ == "__main__":
     planet = Planet()
-    print(planet)
     print(repr(planet))
+    blaise = Human("blaise")
+    planet.add(blaise)
+    robot = Robot("Robot")
+    planet.add(robot)
+    print(repr(planet))
+    print(planet)

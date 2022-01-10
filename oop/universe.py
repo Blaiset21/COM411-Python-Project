@@ -21,29 +21,35 @@ class Universe:
 
         for index in range(random.randint(1, 10)):
             robot = Robot(f"Robot{index}")
-            planet.add_robot(robot)
+            planet.add(robot)
 
         for index in range(random.randint(1, 10)):
             human = Human(f"Human{index}")
-            planet.add_human(human)
+            planet.add(human)
 
         self.planets.append(planet)
+        print(planet)
 
 
     def show_populations(self):
         num_subplots = len(self.planets)
 
-        fig, axs = plt.subplots(1, num_subplots)
+        fig = plt.figure()
 
         for index in range(num_subplots):
             planet = self.planets[index]
-            num_humans = len(planet.inhabitants['humans'])
-            num_robots = len(planet.inhabitants['robots'])
 
-            if num_subplots == 1:
-                axs.bar([1, 2], [num_humans, num_robots])
-            else:
-                axs[index].bar([1, 2], [num_humans, num_robots])
+            num_humans = 0
+            num_robots = 0
+
+            for inhabitant in planet.inhabitants:
+                if isinstance(inhabitant, Human):
+                    num_humans += 1
+                elif isinstance(inhabitant, Robot):
+                    num_robots += 1
+
+            ax = fig.add_subplot(1, num_subplots, index + 1)
+            ax.bar([1, 2], [num_humans, num_robots])
 
         plt.tight_layout()
         plt.show()

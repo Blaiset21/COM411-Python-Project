@@ -1,36 +1,46 @@
 import matplotlib.pyplot as plt
+import random
 
 
 def data():
     paths = {}
-    print("What type of line would you like? : for dotted, - for solid or -- for dashed")
-    line = input()
-    print("what type of colour would you like? r for red, g for green or b for blue")
+    print("What type of line would you like:\n"
+          "[:] Dotted\n"
+          "[--] Dashed\n"
+          "[-] Straight")
+    line_type = input()
+    print("What colour would you like:\n"
+          "[r] red\n"
+          "[g] greed\n"
+          "[b] blue")
     colour = input()
-    print("what type of style would you like? o,s or ^")
-    style = input()
-    paths['line'] = line
+    print("What type of Marker would you like:\n"
+          "[o] Circle\n"
+          "[s] Square\n"
+          "[^] Up arrow")
+    marker_type = input()
+    paths['line_type'] = line_type
     paths['colour'] = colour
-    paths['style'] = style
+    paths['marker_type'] = marker_type
     return paths
 
 
 def generate():
     print("How many lines would you like to display?")
-    num_lines = int(input())
-    for num_lines in range(num_lines):
+    lines = int(input())
+    for count in range(lines):
         values = data()
-        import random
-        x = random.sample(range(1, 10),5)
-        y = random.sample(range(1,10),5)
-        format = f"{values['colour']}{values['line']}{values['style']}"
-        plt.plot(x,y,format)
-        plt.show()
+        x = random.sample(range(1, 10), 5)
+        y = random.sample(range(1, 10), 5)
+        formatting = f"{values['colour']}{values['line_type']}{values['marker_type']}"
+        plt.plot(x, y, formatting)
+    plt.show()
 
 
 def run():
-    print("Running...")
+    print("Running....")
     generate()
     print("Done!")
+
 
 run()
